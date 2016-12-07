@@ -8,6 +8,7 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
   </head>
   <body>
     <section class="page-header">
@@ -266,7 +267,48 @@
 	
 	<div id="text_analysis" style="clear:both">
 		<h2>Text analysis</h2>
-	</div>
+		
+<div class="w3-content w3-display-container">
+  <img class="mySlides" src="https://raw.githubusercontent.com/s103619/02805_project_b/master/pictures/wc_s1.png" style="width:100%">
+  <img class="mySlides" src="https://raw.githubusercontent.com/s103619/02805_project_b/master/pictures/wc_s2.png" style="width:100%">
+  <img class="mySlides" src="https://raw.githubusercontent.com/s103619/02805_project_b/master/pictures/wc_s3.png" style="width:100%">
+  <img class="mySlides" src="https://raw.githubusercontent.com/s103619/02805_project_b/master/pictures/wc_s4.png" style="width:100%">
+  <img class="mySlides" src="https://raw.githubusercontent.com/s103619/02805_project_b/master/pictures/wc_s5.png" style="width:100%">
+  <img class="mySlides" src="https://raw.githubusercontent.com/s103619/02805_project_b/master/pictures/wc_s6.png" style="width:100%">
+
+  <a class="w3-btn-floating w3-display-left" onclick="plusDivs(-1)">&#10094;</a>
+  <a class="w3-btn-floating w3-display-right" onclick="plusDivs(1)">&#10095;</a>
+</div>
+
+<p class="w3-center" style="font-size:10pt; margin:auto; text-align:justify!important; width:70%">Manual Slideshow</p>
+
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  var y = document.getElementsByClassName("w3-center");
+  var splat = ['We can see that Eddard (Ned) Stark is one of the more prominent names in the cloud. Tyrion is larger, but Eddard\'s name is there at least twice (Eddard and Ned), meaning it would be larger than it shows. Stark is easily the most prominent term, indicating that the Stark family takes up the majority of the screen time, with the Lannisters in second place.', 
+  'We see a stark (hah) decline in the prominence of the Stark house, meaning that either the scripts stop referring to them by their house name, or that other families and characters are put more in focus. We see that the head of the Stark family, Eddard \'Ned\' Stark, is completely absent, which makes sense considering he\'s dead. King is the most prominent here, indicating that there is a large focus on the king of Winterfell.', 
+  'The house and character names are starting to decrease significantly, with none of them being particularly prominent during this season. Focus seems to be on the leader of Winterfell instead.', 
+  'The house names are even smaller this time, but we see Jon start to take up more space compared to any other character.', 
+  'Cersei is starting to become a much more prominent character, when Jon doesn\'t hog the screen time. Everyone\'s favourite characer, Tyrion, seemingly hasn\'t decreased in popularity given that his screen time', 
+  'It looks like Jon Snow either has an awful lot of screen time or the characters can\'t stop talking about him this season. Tyrion remains as prominent as ever. Ramsay is given more attention here than previously, which makes sense considering this was the season where Jon Snow\'s army fought against Ramsay\'s army.'];
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+  y[0].innerText = splat[slideIndex-1];
+}
+</script>
 <!-- insert image like this:
 <p><img src="https://raw.githubusercontent.com/s103619/02805_project_b/master/pictures/review_sentiment.png" alt="Sentiment analysis"></p>
 -->
