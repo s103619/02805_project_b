@@ -142,13 +142,25 @@
 		<br>
 		<div id="modularity">
 			<h3>Community modularity</h3>
-			<p>This section describes the community of GoT. To examine whether the defined houses are good communities or not, we have calculated the modularity value of each of them.</p>
+			<p>This section describes the community of GoT. To examine whether the defined houses are good communities or not, we have calculated the modularity value of each of them.
+			The equation below, was used calculate a modularity value for each house.</p>
+			<p style="margin:auto; width:16%"><img src="https://raw.githubusercontent.com/s103619/02805_project_b/master/pictures/equation_9_12.PNG"></p>
+			<p>
+			n<sub>c</sub>: Number of communities  <br>
+			L<sub>c</sub>: The total number of links within the community C<sub>c</sub><br>
+			k<sub>c</sub>: The total degree of the nodes in the community C<sub>c</sub> (total degree = in-degree + out-degree)<br>
+			</p>
+			<p>The table below, shows the modularity value for each house. A positive modularity value means that there are more links in the community than expected (in a random network).
+			A modularity value of zero, means that the community has the expected number of links, and a negative value means that it has a lower number of links than expected.
+			<br>
+			This means that the houses that are defined in GoT seems like good communities, since they all have a positive value.</p>
+			<br>
 			<table style="margin:auto; width:34%">
 				<tr>
 					<th>House</th>
-					<th>L</th>
-					<th>k</th>
-					<th>M</th>
+					<th>L_c</th>
+					<th>k_c</th>
+					<th>M_c</th>
 				</tr>
 				<tr>
 					<td>House Hightower</td>
@@ -230,7 +242,23 @@
 				</tr>
 			</table>
 		</div>
-		
+		<div id="confusion matrix">
+			<h3>Community comparison</h3>
+			<p>We have used the Louvain algorithm, to examine whether there exists better communities than the houses. The result of this is a confusion matrix <i>D</i>, which tells whether the Louvain algorithm
+			agrees with the predefined houses or not.
+			<figure>
+				<p><img src="https://raw.githubusercontent.com/s103619/02805_project_b/master/pictures/d_dist_diag.png" style="float:left; width:50%;height:430px"></p>
+				<p><img src="https://raw.githubusercontent.com/s103619/02805_project_b/master/pictures/d_dist_non_diag.png" style="float:right; width:50%;height:430px"></p>
+				<figcaption>Fig. 3 - Distribution of the elements in the confusion matrix. The left is a distribution of diagonal elements, and the right is a distribution of the non-diagonal elements.</figcaption>
+			</figure>
+			<p> The two graphs shows the distribution between the diagional and non-diagonal elements of the confusion matrix. If the distribution of the diagonal elements is skewed to the right and the distribution of the 
+			non-diagonal elements are skewed to the left, this indicates that the communities are well-defined since they do not have many links between them. 
+			<br><br>
+			In this case, the non-diagonal distribution is skewed to the left, but there are also some high values of non-diagonal elements that indicates that there exists some communities with a high number of links 
+			between them. the distribution of diagonal elements are not skewed to the right completely. This means that we cannot conclude that the predefined communities are well-defined, as this suggests that other 
+			communities exists in the GoT universe. This is not completely surprising since some characters change house during the series, and this is not something that we have accounted for in our data extraction.
+			</p>
+		</div>
 		
 	</div>
 	
