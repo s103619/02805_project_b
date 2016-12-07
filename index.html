@@ -8,7 +8,6 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
   </head>
   <body>
     <section class="page-header">
@@ -55,11 +54,11 @@
 	</div>
 	<div id="network_analysis">
 		<h2>Network analysis</h2>
-		We have created a network with a node for each character and a link between two characters if there is a link between between them. 
+		We have created a network with a node for each character and a link between two characters if there is a link between between them, which is shown in Fig. 1.
 		<div id="network" style="margin:auto; width:55%">
 			<figure>
 			<p><img src="https://raw.githubusercontent.com/s103619/02805_project_b/master/pictures/largest_component_got_network.png"></p>
-			<figcaption style="margin:auto; width:65%">Fig. 1 - A visualization of the character network.</figcaption>
+			<figcaption style="margin:auto; width:72%">Fig. 1 - A visualization of the character network.</figcaption>
 			</figure>
 		</div>
 		<div id="tables">
@@ -67,7 +66,7 @@
 			<p>The following table show the ten characters with highest degree. In-degree is defined as the number of times other characters refer to a particular character, whereas out-degree is the opposite. Total degree is 
 			in-degree + out-degree.</p>
 			<br>
-			<table style="margin:auto; width:58%">
+			<table style="margin:auto; width:64%">
 				<tr>
 					<th>Character - In degree</th>
 					<th> Character - Out degree</th>
@@ -130,14 +129,14 @@
 		</div>
 		<div id="log_dist_pictures" style="clear:both">
 			<h3>Degree distribution</h3>
-			<p>The degree distribution can be used to tell something about what type of network we are dealing with. The graphs below shows the distribution of in-degrees and the distribution of out-degrees, respectively,
+			<p>The degree distribution can be used to tell something about what type of network we are dealing with. Fig. 2 shows the distribution of in-degrees and the distribution of out-degrees, respectively,
 			plotted on a double logarithmic scale. Both distributions are similar to a Poisson distribution. If the distributions were following a power-law, it would mean that we have a big group of characters with
 			a very low degree (~0-10), and a tiny group of characters with a very high degree (>100). In this case, the distribution is more even.
 			</p>
 			<figure>
 			<p><img src="https://raw.githubusercontent.com/s103619/02805_project_b/master/pictures/dist_in_deg_log.png" style="float:left; width:50%;"></p>
 			<p><img src="https://raw.githubusercontent.com/s103619/02805_project_b/master/pictures/dist_out_deg_log.png" style="float:right; width:50%;"></p>
-			<figcaption style="margin:auto; width:59%">Fig. 2 - Visualizations of the degree distribution, plotted on double logarithmic scale.</figcaption>
+			<figcaption style="margin:auto; width:65%">Fig. 2 - Visualizations of the degree distribution, plotted on double logarithmic scale.</figcaption>
 			</figure>
 		</div>
 		<br>
@@ -252,7 +251,7 @@
 				<p><img src="https://raw.githubusercontent.com/s103619/02805_project_b/master/pictures/d_dist_non_diag.png" style="float:right; width:50%;height:430px"></p>
 				<figcaption>Fig. 3 - Distribution of the elements in the confusion matrix. The left is a distribution of diagonal elements, and the right is a distribution of the non-diagonal elements.</figcaption>
 			</figure>
-			<p> The two graphs shows the distribution between the diagional and non-diagonal elements of the confusion matrix. If the distribution of the diagonal elements is skewed to the right and the distribution of the 
+			<p> Fig. 3 shows the distribution between the diagional and non-diagonal elements of the confusion matrix. If the distribution of the diagonal elements is skewed to the right and the distribution of the 
 			non-diagonal elements are skewed to the left, this indicates that the communities are well-defined since they do not have many links between them. 
 			<br><br>
 			In this case, the non-diagonal distribution is skewed to the left, but there are also some high values of non-diagonal elements that indicates that there exists some communities with a high number of links 
@@ -260,61 +259,66 @@
 			communities exists in the GoT universe. This is not completely surprising since some characters change house during the series, and this is not something that we have accounted for in our data extraction.
 			</p>
 		</div>
-		
 	</div>
-	
-	
-	
 	<div id="text_analysis" style="clear:both">
 		<h2>Text analysis</h2>
-		
-<div class="w3-content w3-display-container">
-  <img class="mySlides" src="https://raw.githubusercontent.com/s103619/02805_project_b/master/pictures/wc_s1.png" style="width:100%">
-  <img class="mySlides" src="https://raw.githubusercontent.com/s103619/02805_project_b/master/pictures/wc_s2.png" style="width:100%">
-  <img class="mySlides" src="https://raw.githubusercontent.com/s103619/02805_project_b/master/pictures/wc_s3.png" style="width:100%">
-  <img class="mySlides" src="https://raw.githubusercontent.com/s103619/02805_project_b/master/pictures/wc_s4.png" style="width:100%">
-  <img class="mySlides" src="https://raw.githubusercontent.com/s103619/02805_project_b/master/pictures/wc_s5.png" style="width:100%">
-  <img class="mySlides" src="https://raw.githubusercontent.com/s103619/02805_project_b/master/pictures/wc_s6.png" style="width:100%">
+		<p>This section contains our text analysis that was performed on the transcripts and reviews of the episodes.</p>
+		<h3>Sentiment analysis: Reviews</h3>
+		<p>
+			Sentiment analysis is, as the term implies, used to determine the sentiment, the attitude, of a given piece of text. 
+			This is done by determining, for example in our case, the happiness rating of each word. We have used the 
+			<a href="http://journals.plos.org/plosone/article/file?type=supplementary&id=info:doi/10.1371/journal.pone.0026752.s001">LabMT data set</a> for our happiness scale. 
+			The sentiment score for the text is then the sum of each word in the given text. We have chosen to do a sentiment analysis per episode.
+		</p>
+		<div id="sentiment_review">
+			<figure>
+				<p><img src="https://raw.githubusercontent.com/s103619/02805_project_b/master/pictures/sentiment_episodes_reviews.png"></p>
+				<figcaption style="margin:auto; width:52%">Fig. 4 - Visualization of sentiment analysis for the episode reviews.</figcaption>
+			</figure>
+			<p>
+			Fig. 4 shows the sentiment score for each episode. The seasons are separated with a vertical black line.  
+			We can see that the first season dips quite low towards the end, which would make sense considering that this is when, spoiler warning, Eddard Stark gets his head chopped off and put on a pike, which, 
+			considering the popularity of the character, won't be talked about in particularly happy tones.  
+			</p>
+			<p>
+			During the first couple of seasons, there is seemingly a trend for the finale to leave the viewer in an unhappy mood, with the end of season 3 being a particularly dour moment in the series with a few 
+			instances of bodily desecrations, one being of the trouser-sausage variety.  
+			</p>
+			<p>
+			From the fourth season on, there's an indication that the second-to-last episode is where the shows gets darkest before a vindication of the characters the audience cheers for during the finale.
+			</p>
+		</div>
+		<h3>Sentiment analysis: Transcripts</h3>
+		<p>
+			This sections contains another sentiment analysis. This time we are looking at the transcripts of all the episodes.
+		</p>
+		<div id="sentiment_trans">
+			<figure>
+				<p><img src="https://raw.githubusercontent.com/s103619/02805_project_b/master/pictures/sentiments_transcripts.png"></p>
+				<figcaption style="margin:auto; width:54%">Fig. 5 - Visualization of sentiment analysis for the episode transcripts.</figcaption>
+			</figure>
+			<p>
+			Fig. 5 shows that it is harder to decern the sentiment of the transcripts. There is a tendency towards a decline in happiness through the series, with a few spikes both up- and downwards and an outlier towards the second-to-last episode of the series with episode 59. This seems to sugges that the tone, while having spikes here and there, gets steadily darker as the show progresses.ring the popularity of the character, won't be talked about in particularly happy tones.  
+			</p>
+		</div>
+		<h3>Word clouds</h3>
+		<p> 
+		We have chosen to visualize word clouds of the transcripts of all the episodes in a season. 
+		A word cloud is a visualization of the frequency of words in a given season relative to its frequency in all transcripts. The result is six figures. Use the arrows to show the word cloud of the next or previous season.
+		</p>		
+		<div class="w3-content w3-display-container">
+		  <img class="mySlides" src="https://raw.githubusercontent.com/s103619/02805_project_b/master/pictures/wc_s1.png" style="width:100%">
+		  <img class="mySlides" src="https://raw.githubusercontent.com/s103619/02805_project_b/master/pictures/wc_s2.png" style="width:100%">
+		  <img class="mySlides" src="https://raw.githubusercontent.com/s103619/02805_project_b/master/pictures/wc_s3.png" style="width:100%">
+		  <img class="mySlides" src="https://raw.githubusercontent.com/s103619/02805_project_b/master/pictures/wc_s4.png" style="width:100%">
+		  <img class="mySlides" src="https://raw.githubusercontent.com/s103619/02805_project_b/master/pictures/wc_s5.png" style="width:100%">
+		  <img class="mySlides" src="https://raw.githubusercontent.com/s103619/02805_project_b/master/pictures/wc_s6.png" style="width:100%">
 
-  <a class="w3-btn-floating w3-display-left" onclick="plusDivs(-1)">&#10094;</a>
-  <a class="w3-btn-floating w3-display-right" onclick="plusDivs(1)">&#10095;</a>
-</div>
-
-<p class="w3-center" style="font-size:10pt; margin:auto; text-align:justify!important; width:70%">Manual Slideshow</p>
-
-<script>
-var slideIndex = 1;
-showDivs(slideIndex);
-
-function plusDivs(n) {
-  showDivs(slideIndex += n);
-}
-
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  var y = document.getElementsByClassName("w3-center");
-  var splat = ['We can see that Eddard (Ned) Stark is one of the more prominent names in the cloud. Tyrion is larger, but Eddard\'s name is there at least twice (Eddard and Ned), meaning it would be larger than it shows. Stark is easily the most prominent term, indicating that the Stark family takes up the majority of the screen time, with the Lannisters in second place.', 
-  'We see a stark (hah) decline in the prominence of the Stark house, meaning that either the scripts stop referring to them by their house name, or that other families and characters are put more in focus. We see that the head of the Stark family, Eddard \'Ned\' Stark, is completely absent, which makes sense considering he\'s dead. King is the most prominent here, indicating that there is a large focus on the king of Winterfell.', 
-  'The house and character names are starting to decrease significantly, with none of them being particularly prominent during this season. Focus seems to be on the leader of Winterfell instead.', 
-  'The house names are even smaller this time, but we see Jon start to take up more space compared to any other character.', 
-  'Cersei is starting to become a much more prominent character, when Jon doesn\'t hog the screen time. Everyone\'s favourite characer, Tyrion, seemingly hasn\'t decreased in popularity given that his screen time', 
-  'It looks like Jon Snow either has an awful lot of screen time or the characters can\'t stop talking about him this season. Tyrion remains as prominent as ever. Ramsay is given more attention here than previously, which makes sense considering this was the season where Jon Snow\'s army fought against Ramsay\'s army.'];
-  if (n > x.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = x.length}
-  for (i = 0; i < x.length; i++) {
-     x[i].style.display = "none";  
-  }
-  x[slideIndex-1].style.display = "block";  
-  y[0].innerText = splat[slideIndex-1];
-}
-</script>
-<!-- insert image like this:
-<p><img src="https://raw.githubusercontent.com/s103619/02805_project_b/master/pictures/review_sentiment.png" alt="Sentiment analysis"></p>
--->
-
-
-
+		<a class="w3-btn-floating w3-display-left" onclick="plusDivs(-1)">&#10094;</a>
+		<a class="w3-btn-floating w3-display-right" onclick="plusDivs(1)">&#10095;</a>
+		</div>
+		<p class="w3-center" style="font-size:10pt; margin:auto; text-align:justify!important; width:70%">Manual Slideshow</p>
+	</div>
 	<div id="sources">
 	<h4>Sources:</h4>
 	<ul>
@@ -347,9 +351,33 @@ function showDivs(n) {
       <footer class="site-footer">
         <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
       </footer>
-
     </section>
+  	<script>
+	var slideIndex = 1;
+	showDivs(slideIndex);
 
-  
+	function plusDivs(n) {
+	  showDivs(slideIndex += n);
+	}
+
+	function showDivs(n) {
+	  var i;
+	  var x = document.getElementsByClassName("mySlides");
+	  var y = document.getElementsByClassName("w3-center");
+	  var splat = ['We can see that Eddard (Ned) Stark is one of the more prominent names in the cloud. Tyrion is larger, but Eddard\'s name is there at least twice (Eddard and Ned), meaning it would be larger than it shows. Stark is easily the most prominent term, indicating that the Stark family takes up the majority of the screen time, with the Lannisters in second place.', 
+	  'We see a stark decline in the prominence of the Stark house, meaning that either the scripts stop referring to them by their house name, or that other families and characters are put more in focus. We see that the head of the Stark family, Eddard \'Ned\' Stark, is completely absent, which makes sense considering he\'s dead. King is the most prominent here, indicating that there is a large focus on the king of Winterfell.', 
+	  'The house and character names are starting to decrease significantly, with none of them being particularly prominent during this season. Focus seems to be on the leader of Winterfell instead.', 
+	  'The house names are even smaller this time, but we see Jon start to take up more space compared to any other character.', 
+	  'Cersei is starting to become a much more prominent character, when Jon doesn\'t hog the screen time. Everyone\'s favourite characer, Tyrion, seemingly hasn\'t decreased in popularity given that his screen time', 
+	  'It looks like Jon Snow either has an awful lot of screen time or the characters can\'t stop talking about him this season. Tyrion remains as prominent as ever. Ramsay is given more attention here than previously, which makes sense considering this was the season where Jon Snow\'s army fought against Ramsay\'s army.'];
+	  if (n > x.length) {slideIndex = 1}    
+	  if (n < 1) {slideIndex = x.length}
+	  for (i = 0; i < x.length; i++) {
+		 x[i].style.display = "none";  
+	  }
+	  x[slideIndex-1].style.display = "block";  
+	  y[0].innerText = splat[slideIndex-1];
+	}
+	</script>
   </body>
 </html>
