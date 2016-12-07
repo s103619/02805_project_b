@@ -55,14 +55,188 @@
 	<div id="network_analysis">
 		<h2>Network analysis</h2>
 		We have created a network with a node for each character and a link between two characters if there is a link between between them. 
-		<img src="https://raw.githubusercontent.com/s103619/02805_project_b/master/pictures/largest_component_got_network.png" alt="Network visualization">
-
+		<div id="network" style="margin:auto; width:55%">
+			<figure>
+			<p><img src="https://raw.githubusercontent.com/s103619/02805_project_b/master/pictures/largest_component_got_network.png"></p>
+			<figcaption style="margin:auto; width:65%">Fig. 1 - A visualization of the character network.</figcaption>
+			</figure>
 		</div>
+		<div id="tables">
+			<br>
+			<p>The following table show the ten characters with highest degree. In-degree is defined as the number of times other characters refer to a particular character, whereas out-degree is the opposite. Total degree is 
+			in-degree + out-degree.</p>
+			<br>
+			<table style="margin:auto; width:58%">
+				<tr>
+					<th>Character - In degree</th>
+					<th> Character - Out degree</th>
+					<th>Character - Total degree</th>
+				</tr>
+				<tr>
+					<td>Tyrion Lannister, 187</td>
+					<td>Tyrion Lannister, 63</td>
+					<td>Tyrion Lannister, 250</td>
+				</tr>
+				<tr>
+					<td>Jon Snow, 170</td>
+					<td>Jon Snow, 57</td>
+					<td>Jon Snow, 227</td>
+				</tr>
+				<tr>
+					<td>Daenerys Targaryen, 146</td>
+					<td>Eddard Stark, 56</td>
+					<td>Eddard Stark, 195</td>
+				</tr>
+				<tr>
+					<td>Robb Stark, 146</td>
+					<td>Varys, 54</td>
+					<td>Daenerys Targaryen, 192</td>
+				</tr>
+				<tr>
+					<td>Eddard Stark, 139</td>
+					<td>Catelyn Stark, 53</td>
+					<td>Jaime Lannister, 183</td>
+				</tr>
+				<tr>
+					<td>Jaime Lannister, 138</td>
+					<td>Petyr Baelish, 50</td>
+					<td>Robb Stark, 180</td>
+				</tr>
+				<tr>
+					<td>Sansa Stark, 128</td>
+					<td>Theon Greyjoy, 50</td>
+					<td>Sansa Stark, 174</td>
+				</tr>
+				<tr>
+					<td>Stannis Baratheon, 125</td>
+					<td>Cersei Lannister, 48</td>
+					<td>Cersei Lannister, 166</td>
+				</tr>
+				<tr>
+					<td>Joffrey Baratheon, 122</td>
+					<td>Robert Baratheon, 46</td>
+					<td>Stannis Baratheon, 165</td>
+				</tr>
+				<tr>
+					<td>Tywin Lannister, 121</td>
+					<td>Daenerys Targaryen, 46</td>
+					<td>Robert Baratheon, 164</td>
+				</tr>
+			</table>
+			<br>
+			<p>Not surprisingly the table above shows that it is the most well-known characters that are referenced most.</p>
+			<br>
+		</div>
+		<div id="log_dist_pictures" style="clear:both">
+			<h3>Degree distribution</h3>
+			<p>The degree distribution can be used to tell something about what type of network we are dealing with. The graphs below shows the distribution of in-degrees and the distribution of out-degrees, respectively,
+			plotted on a double logarithmic scale. Both distributions are similar to a Poisson distribution. If the distributions were following a power-law, it would mean that we have a big group of characters with
+			a very low degree (~0-10), and a tiny group of characters with a very high degree (>100). In this case, the distribution is more even.
+			</p>
+			<figure>
+			<p><img src="https://raw.githubusercontent.com/s103619/02805_project_b/master/pictures/dist_in_deg_log.png" style="float:left; width:50%;"></p>
+			<p><img src="https://raw.githubusercontent.com/s103619/02805_project_b/master/pictures/dist_out_deg_log.png" style="float:right; width:50%;"></p>
+			<figcaption style="margin:auto; width:59%">Fig. 2 - Visualizations of the degree distribution, plotted on double logarithmic scale.</figcaption>
+			</figure>
+		</div>
+		<br>
+		<div id="modularity">
+			<h3>Community modularity</h3>
+			<p>This section describes the community of GoT. To examine whether the defined houses are good communities or not, we have calculated the modularity value of each of them.</p>
+			<table style="margin:auto; width:34%">
+				<tr>
+					<th>House</th>
+					<th>L</th>
+					<th>k</th>
+					<th>M</th>
+				</tr>
+				<tr>
+					<td>House Hightower</td>
+					<td>1</td>
+					<td>73</td>
+					<td>0.00013</td>
+				</tr>
+				<tr>
+					<td>House Lannister</td>
+					<td>67</td>
+					<td>1055</td>
+					<td>0.00358</td>
+				</tr>
+				<tr>
+					<td>Night's Watch</td>
+					<td>48</td>
+					<td>478</td>
+					<td>0.00624</td>
+				</tr>
+				<tr>
+					<td>House Martell</td>
+					<td>48</td>
+					<td>307</td>
+					<td>0.00710</td>
+				</tr>
+				<tr>
+					<td>House Greyjoy</td>
+					<td>38</td>
+					<td>295</td>
+					<td>0.00554</td>
+				</tr>
+				<tr>
+					<td>House Frey</td>
+					<td>19</td>
+					<td>166</td>
+					<td>0.00287</td>
+				</tr>
+				<tr>
+					<td>Faith of the Seven</td>
+					<td>10</td>
+					<td>87</td>
+					<td>0.00156</td>
+				</tr>
+				<tr>
+					<td>House Stark</td>
+					<td>124</td>
+					<td>1529</td>
+					<td>0.00484</td>
+				</tr>
+				<tr>
+					<td>House Baratheon</td>
+					<td>4</td>
+					<td>164</td>
+					<td>0.00047</td>
+				</tr>
+				<tr>
+					<td>House Tully</td>
+					<td>18</td>
+					<td>365</td>
+					<td>0.00203</td>
+				</tr>
+				<tr>
+					<td>House Tyrell</td>
+					<td>14</td>
+					<td>235</td>
+					<td>0.00189</td>
+				</tr>
+				<tr>
+					<td>House Targaryen</td>
+					<td>256</td>
+					<td>1364</td>
+					<td>0.02912</td>
+				</tr>
+				<tr>
+					<td>House Arryn</td>
+					<td>5</td>
+					<td>107</td>
+					<td>0.00073</td>
+				</tr>
+			</table>
+		</div>
+		
+		
+	</div>
 	
 	
 	
-	
-	<div id="text_analysis">
+	<div id="text_analysis" style="clear:both">
 		<h2>Text analysis</h2>
 	</div>
 <!-- insert image like this:
